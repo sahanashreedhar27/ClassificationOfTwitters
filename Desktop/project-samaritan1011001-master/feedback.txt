@@ -1,0 +1,34 @@
+Summary:
+
+This project classifies Twitter followers as bot or not. A model is trained on a pre-existing dataset, as well as some new data collected and labeled based on whether the user is verified.
+
+Overall, the project does a nice job of formulating the problem and implementing several solutions. Each required command line function appears to work as intended.
+
+Areas of improvement:
+- Report does not describe any classification accuracies to determine which method does best. The `osna evaluate` command suggests accuracy is 99%. This is clearly not reflective of how difficult this task really is, and instead suggests a problem with how the data are collected and labeled. The data are most likely not representative of all Twitter followers, but are instead an artificially easier subset. This should be investigated further.
+- Web app never finishes due to rate limits. Should probably collect a smaller amount of data for the purpose of a demo.
+
+Code:
+
+$ osna collect data
+
+works, though I get a number of "SOME ERROR OCCURRED...PASSING!!!"
+
+$ osna network 
+
+works, though I get a number of "SOME ERROR OCCURRED...PASSING!!!"
+
+$ osna stats
+
+works
+
+$ osna train
+
+works
+
+$ osna evaluate
+
+works, though I am baffled by the 99% accuracy. 
+
+$ osna web
+

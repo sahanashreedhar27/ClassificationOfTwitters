@@ -1,0 +1,30 @@
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - OSNA</title>
+      {% else %}
+      <title>OSNA</title>
+      {% endif %}
+      <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    </head>
+    <body>
+        <h1>Classification of Followers of Influential Users</h1>
+        <hr>
+        {% if form.errors %}
+        {{ form.errors }}
+        {% endif %}
+
+        {% block content %}{% endblock %}
+
+{#        {% with messages = get_flashed_messages() %}#}
+{#        {% if messages %}#}
+{#        <ul>#}
+{#            {% for message in messages %}#}
+{#            <li>{{ message }}</li>#}
+{#            {% endfor %}#}
+{#        </ul>#}
+{#        {% endif %}#}
+{#        {% endwith %}#}
+        <br>
+    </body>
+</html>

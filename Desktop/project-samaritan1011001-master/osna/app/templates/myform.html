@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+<link rel="stylesheet" media="screen" href="static/bootstrap.min.css">
+<link rel="stylesheet" href="static/bootstrap-theme.min.css">
+{% block content %}
+    <b>Enter the names of Influential users:</b>
+    <form action="" method="post" novalidate>
+    <div class="form-group" style="padding-top: 25px">
+        <label for="inf_user1">Influential User 1:</label>
+        {{ form.input_field1(size=32) }}
+        <label for="inf_user2" style="padding-left: 25px">Influential User 2:</label>
+        {{ form.input_field2(size=32) }}
+    </div>
+        <div style="padding-top: 25px">
+    {{ form.submit() }}
+   </div>
+    </form>
+
+
+{% if form.input_field1.data != None and form.input_field2.data != None %}
+    <img src="{{ url_for('static', filename="network.png") }}" style="width:600px;height:600px;"/>
+{% endif %}
+{% endblock %}
